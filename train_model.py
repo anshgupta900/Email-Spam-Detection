@@ -78,6 +78,8 @@ X = df.drop(
 
 y = df["Spam"]
 
+model_features = list(X.columns)
+
 
 X_train, X_test, y_train, y_test = train_test_split(
     X,
@@ -204,7 +206,7 @@ joblib.dump(
 )
 
 joblib.dump(
-    list(X.columns),
+    model_features,
     "model_features.pkl"
 )
 
